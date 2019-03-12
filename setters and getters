@@ -1,0 +1,49 @@
+// Rysunek 3.1. Account.java
+// Klasa Account zawierajaca zmienna instancji name 
+// oraz metode ustawiajaca i metode pobierajaca jej wartosc
+
+public class Account {
+   private String name; // Zmienna instancji
+ 
+   // Metoda ustawiajaca name w obiekcie    
+   public void setName(String name) { 
+      this.name = name; // Zapamietanie wartosci name
+   }         
+
+   // Metoda pobierajaca name w obiekcie
+   public String getName() {
+      return name; // Zwroc zawartosc name        
+   }         
+}
+
+
+
+// Rysunek 3.2. AccountTest.java
+// Tworzenie i modyfikowanie obiektu Account
+import java.util.Scanner;
+
+public class AccountTest {
+   public static void main(String[] args) { 
+      // Utworzenie obiektu Scanner, aby pobrac dane z konsoli
+      Scanner input = new Scanner(System.in);
+
+      // Utworz obiekt Account i przypisz go do zmiennej myAccount
+      Account myAccount = new Account(); 
+
+      // Wyswietl poczatkowa wartosc name (null)
+      System.out.printf("Poczatkowe imie to: %s%n%n", myAccount.getName());
+
+      // Zapytaj o imie i nazwisko, a nastepnie wpisz je do zmiennej
+      System.out.println("Wpisz swoje imie i nazwisko:");
+
+      String theName = input.nextLine(); // Odczytaj wiersz tekstu
+
+      myAccount.setName(theName); // Umiesc theName w myAccount
+
+      System.out.println(); // Wyswietl pusty wiersz
+
+      // Wyswietl wartosc name zawarta w obiekcie o nazwie myAccount
+      System.out.printf("Imie i nazwisko w obiekcie myAccount:%n%s%n",
+         myAccount.getName());
+   } 
+} 
